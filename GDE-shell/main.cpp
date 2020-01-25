@@ -11,7 +11,7 @@
 
 #include "manager/desktop_manager.hpp"
 
-#include <QApplication>
+#include <QGuiApplication>
 #include <QQuickWindow>
 #include <QQmlEngine>
 #include <QCommandLineParser>
@@ -23,7 +23,7 @@ int main(int argc, char *argv[]) {
 
     QQuickWindow::setDefaultAlphaBuffer(true);
 
-    QApplication app(argc, argv);
+    QGuiApplication app(argc, argv);
 
     QCoreApplication::setApplicationName("GDE-shell");
     QCoreApplication::setApplicationVersion("0.0.0");

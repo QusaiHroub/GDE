@@ -12,8 +12,9 @@
 #pragma once
 
 #include <QObject>
-#include <QApplication>
+#include <QGuiApplication>
 #include <QQuickView>
+#include <QScreen>
 
 namespace Mgr {
     class DesktopManager : public QObject {
@@ -24,8 +25,13 @@ namespace Mgr {
 
     private:
         QQmlEngine *m_engine;
+        QGuiApplication *m_app;
+        QScreen *m_primaryScreen;
 
     public slots:
+        void primaryScreenChanged(QScreen *screen);
+        void screenRemoved(const QScreen *screen);
+        void screenAdded(const QScreen *screen);
 
     };
 }
