@@ -1,7 +1,7 @@
 /*
  * This file is part of GDE
  *
- * Copyright © 2020 QusaiHroub
+ * Copyright © 2020 Qusai Hroub
  *
  * GDE is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -9,16 +9,21 @@
  * version 2.1 of the License, or (at your option) any later version.
  */
 
-#include <QApplication>
+#include "manager/desktop_manager.hpp"
+
+#include <QGuiApplication>
 #include <QQuickWindow>
+#include <QQmlEngine>
 #include <QCommandLineParser>
+
+using namespace Mgr;
 
 int main(int argc, char *argv[]) {
     QGuiApplication::setFallbackSessionManagementEnabled(false);
 
     QQuickWindow::setDefaultAlphaBuffer(true);
 
-    QApplication app(argc, argv);
+    QGuiApplication app(argc, argv);
 
     QCoreApplication::setApplicationName("GDE-shell");
     QCoreApplication::setApplicationVersion("0.0.0");
@@ -28,6 +33,10 @@ int main(int argc, char *argv[]) {
     p.addVersionOption();
     p.setApplicationDescription("Global Desktop Environment Shell");
     p.process(app);
+
+    QQmlEngine engine;
+
+    DesktopManager desktopManager(&engine);
 
     return app.exec();
 }
