@@ -11,6 +11,8 @@
 
 #pragma once
 
+#include <gdesktop.hpp>
+
 #include <QObject>
 #include <QGuiApplication>
 #include <QQuickView>
@@ -27,6 +29,7 @@ namespace Mgr {
         QQmlEngine *m_engine;
         QGuiApplication *m_app;
         QScreen *m_primaryScreen;
+        QHash<QString, QSharedPointer<Desktop::GDesktop>> m_desktops;
 
     public slots:
         void primaryScreenChanged(QScreen *screen);

@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/desktop_back_drop.qml</file>
+    </qresource>
+</RCC>

@@ -37,11 +37,18 @@ namespace Mgr {
 
     //This signal is emitted whenever a new screen has been removed from the system.
     void DesktopManager::screenRemoved(const QScreen *screen) {
-        qDebug() << "Screen removed" << screen->name();
+
+        qDebug() << "Screen removed:" << screen->name() << "Bye Bye";
+
+        m_desktops.remove(screen->name());
     }
 
     //This signal is emitted whenever a new screen has been added to the system.
     void DesktopManager::screenAdded(const QScreen *screen) {
-        qDebug() << "Screen added" << screen->name();
+
+        qDebug() << "Screen added:" << screen->name();
+
+        //Temporarily use screen name as a key.
+        m_desktops.insert(screen->name(), QSharedPointer<Desktop::GDesktop>(new Desktop::GDesktop(m_engine, screen)));
     }
 }

@@ -26,3 +26,9 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     manager/desktop_manager.hpp
+
+unix:!macx: LIBS += -L$$OUT_PWD/../gDesktop/ -lgDesktop
+LIBS += -L/usr/lib/ -lgDesktop
+
+INCLUDEPATH += $$PWD/../gDesktop
+DEPENDPATH += $$PWD/../gDesktop

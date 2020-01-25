@@ -3,9 +3,21 @@
 
 #include "gDesktop_global.h"
 
-class GDESKTOP_EXPORT GDesktop {
-public:
-    GDesktop();
-};
+#include <QQuickView>
+#include <QScreen>
+
+namespace Desktop {
+
+    class GDESKTOP_EXPORT GDesktop : public QQuickView {
+        Q_OBJECT
+
+    public:
+        explicit GDesktop(QQmlEngine *engine, const QScreen *screen);
+        void updateGeometry(const QRect &geometry);
+    private:
+        const QScreen *m_screen;
+    };
+}
+
 
 #endif // GDESKTOP_HPP
