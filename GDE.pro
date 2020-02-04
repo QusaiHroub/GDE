@@ -2,4 +2,5 @@ TEMPLATE = subdirs
 
 SUBDIRS += \
     GDE-shell \
-    gDesktop
+    gDesktop \
+    gxdg
