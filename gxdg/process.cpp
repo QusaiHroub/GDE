@@ -1,7 +1,7 @@
 #include "process.hpp"
 
-Process *Process::instance = nullptr;
-int Process::instanceCounter = 0;
+Process *Process::m_instance = nullptr;
+int Process::m_instanceCounter = 0;
 
 Process::Process(QObject *parent) : QProcess(parent) {
 
@@ -22,30 +22,37 @@ QByteArray Process::readAll() {
     return QProcess::readAll();
 }
 
-Process *Process::getInstance() {
+Process *Process::createInstance() {
     addRef();
 
-    if (instance == nullptr) {
-        instance = new Process();
+    if (m_instance == nullptr) {
+        m_instance = new Process();
     }
 
-    return instance;
+    return m_instance;
+}
+
+QObject *Process::createInstance(QQmlEngine *engine, QJSEngine *scriptEngine) {
+    Q_UNUSED(engine)
+    Q_UNUSED(scriptEngine)
+
+    return createInstance();
 }
 
 void Process::releaseInstance() {
     releasRef();
 
-    if (instanceCounter <= 0 && instance != nullptr) {
-        instanceCounter = 0;
-        delete instance;
-        instance = nullptr;
+    if (m_instanceCounter <= 0 && m_instance != nullptr) {
+        m_instanceCounter = 0;
+        delete m_instance;
+        m_instance = nullptr;
     }
 }
 
 void Process::addRef(){
-    ++instanceCounter;
+    ++m_instanceCounter;
 }
 
 void Process::releasRef(){
-    --instanceCounter;
+    --m_instanceCounter;
 }

@@ -35,7 +35,7 @@ namespace Desktop {
 
     private:
         QVariantList m_allApps;
-        Process *m_process = Process::getInstance();
+        Process *m_process = Process::createInstance();
 
         void exec(const QString &exec);
 
