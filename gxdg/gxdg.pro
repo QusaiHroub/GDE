@@ -18,12 +18,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     DesktopFile.cpp \
+    iconProvider.cpp \
     iniParser.cpp \
     process.cpp
 
 HEADERS += \
     DesktopFile.hpp \
     gxdg_global.h \
+    iconProvider.hpp \
     iniParser.hpp \
     process.hpp
 
