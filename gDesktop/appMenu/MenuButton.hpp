@@ -23,7 +23,7 @@ namespace Desktop {
         Q_PROPERTY(QString exec READ exec WRITE setExec NOTIFY execChanged)
         Q_PROPERTY(QString path READ path WRITE setPath NOTIFY pathChanged)
         Q_PROPERTY(QString comment READ comment WRITE setComment NOTIFY commentChanged)
-        Q_PROPERTY(QString icon_name READ iconName WRITE setIconName NOTIFY iconNameChanged)
+        Q_PROPERTY(QString iconName READ iconName WRITE setIconName NOTIFY iconNameChanged)
         Q_PROPERTY(QIcon icon READ icon WRITE setIcon NOTIFY iconChanged)
         Q_PROPERTY(QString color READ color WRITE setColor NOTIFY colorChanged)
 
@@ -39,7 +39,7 @@ namespace Desktop {
             QString comment() const;
                 void setComment(const QString &comment);
             QString iconName() const;
-                void setIconName(const QString &icon_name);
+                void setIconName(const QString &iconName);
             QIcon icon() const;
                 void setIcon(const QIcon &icon);
             QString color() const;
@@ -51,7 +51,7 @@ namespace Desktop {
             void pathChanged(const QString &path);
             void commentChanged(const QString &comment);
             void iconChanged(const QIcon &icon);
-            void iconNameChanged(const QString &icon_name);
+            void iconNameChanged(const QString &iconName);
             void colorChanged(const QString &color);
 
             Q_INVOKABLE void execApp(const QString &exec);

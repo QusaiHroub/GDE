@@ -69,9 +69,9 @@ namespace Desktop {
         return m_iconName;
     }
 
-    void MenuButton::setIconName(const QString &icon_name) {
-        if (icon_name != m_iconName) {
-            m_iconName = icon_name;
+    void MenuButton::setIconName(const QString &iconName) {
+        if (iconName != m_iconName) {
+            m_iconName = iconName;
             emit iconNameChanged(m_iconName);
         }
     }
