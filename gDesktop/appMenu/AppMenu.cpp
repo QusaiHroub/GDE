@@ -30,13 +30,17 @@ namespace Desktop {
         init();
     }
 
+    AppMenu::~AppMenu() {
+        m_process->releaseInstance();
+    }
+
     void AppMenu::init() {
         allAppInit();
     }
 
     void AppMenu::exec(const QString &exec) {
         qDebug() <<  ("Exec: " + exec);
-        m_process.start(exec);
+        m_process->start(exec);
     }
 
     void AppMenu::allAppInit() {
@@ -89,6 +93,10 @@ namespace Desktop {
                 allApp.setValue(menuButton);
                 m_allApps.append(allApp);
             }
-        }
+        }        
+    }
+
+    QVariantList AppMenu::getAllApps () {
+        return m_allApps;
     }
 }

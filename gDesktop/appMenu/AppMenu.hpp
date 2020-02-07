@@ -24,6 +24,8 @@ namespace Desktop {
         Q_OBJECT
     public:
         explicit AppMenu(QObject *parent = nullptr);
+        ~AppMenu();
+
         Q_INVOKABLE QVariantList getAllApps();
         Q_INVOKABLE int updateAllApps();
         Q_INVOKABLE QVariantList getReacentApps();
@@ -33,7 +35,7 @@ namespace Desktop {
 
     private:
         QVariantList m_allApps;
-        Process m_process;
+        Process *m_process = Process::getInstance();
 
         void exec(const QString &exec);
 
