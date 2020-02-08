@@ -99,4 +99,19 @@ namespace Desktop {
     QVariantList AppMenu::getAllApps () {
         return m_allApps;
     }
+
+    int AppMenu::updateAllApps() {
+
+        return 0;
+    }
+
+    QVariantList AppMenu::getReacentApps() {
+
+        return m_reacentApps;
+    }
+
+    int AppMenu::updateReacentApps() {
+
+        return 0;
+    }
 }
