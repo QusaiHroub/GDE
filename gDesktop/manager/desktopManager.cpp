@@ -9,7 +9,7 @@
  * version 2.1 of the License, or (at your option) any later version.
  */
 
-#include "desktop_manager.hpp"
+#include "desktopManager.hpp"
 
 #include <QDebug>
 #include <QScreen>

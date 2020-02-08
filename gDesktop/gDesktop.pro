@@ -22,13 +22,15 @@ LIBS += -lKF5WindowSystem
 SOURCES += \
     appMenu/AppMenu.cpp \
     appMenu/MenuButton.cpp \
-    gdesktop.cpp
+    gdesktop.cpp \
+    manager/desktopManager.cpp
 
 HEADERS += \
     appMenu/AppMenu.hpp \
     appMenu/MenuButton.hpp \
     gDesktop_global.h \
-    gdesktop.hpp
+    gdesktop.hpp \
+    manager/desktopManager.hpp
 
 # Default rules for deployment.
 unix {

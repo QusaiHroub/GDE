@@ -9,7 +9,7 @@
  * version 2.1 of the License, or (at your option) any later version.
  */
 
-#include "manager/desktop_manager.hpp"
+#include <manager/desktopManager.hpp>
 
 #include <QGuiApplication>
 #include <QQuickWindow>
