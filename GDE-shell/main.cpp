@@ -9,7 +9,7 @@
  * version 2.1 of the License, or (at your option) any later version.
  */
 
-#include <manager/desktopManager.hpp>
+#include "manager/ShellManager.hpp"
 
 #include <QGuiApplication>
 #include <QQuickWindow>
@@ -36,7 +36,7 @@ int main(int argc, char *argv[]) {
 
     QQmlEngine engine;
 
-    DesktopManager desktopManager(&engine);
+    ShellManager shellManager(&engine);
 
     return app.exec();
 }
